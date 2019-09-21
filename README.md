@@ -1,6 +1,6 @@
 ## oracles.cash
 
-![crystal ball](crytsal-ball.jpg)
+![crystal ball](crystal-ball.jpg)
 
 [oracles.cash](https://oracles.cash) is a platform for creating Oracles on Bitcoin Cash.
 
