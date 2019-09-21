@@ -6,11 +6,7 @@ Oracles allow outside information to be provided which can trigger execution in 
 
 This was created for the [2019 WyoHackathon](https://wyohackathon.io)
 
-## Backend
-
-Oracles.cash is a typical REST backend provided by [express.js](https://expressjs.com)
-
-### Price Data
+## Price Data
 
 `/v1/price/details` returns a data object with 2 properties.
 
