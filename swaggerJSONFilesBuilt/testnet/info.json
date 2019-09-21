@@ -2,8 +2,8 @@
 	"openapi": "3.0.0",
 	"info": {
 		"description": "trest.bitcoin.com is the REST layer for Bitcoin.com's Cloud. More info: [developer.bitcoin.com/rest](https://developer.bitcoin.com/rest). Chatroom [geni.us/CashDev](http://geni.us/CashDev)",
-		"version": "3.12.4",
-		"title": "REST",
+		"version": "0.1.1",
+		"title": "oracles.cash",
 		"license": {
 			"name": "MIT",
 			"url": "https://opensource.org/licenses/MIT"

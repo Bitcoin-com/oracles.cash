@@ -1,6 +1,6 @@
 {
 	"paths": {
-		"/prices/details": {
+		"/price/details": {
 			"get": {
 				"tags": [
 					"price"
