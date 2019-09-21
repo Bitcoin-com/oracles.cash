@@ -85,16 +85,6 @@ gulp.task("build", () => {
         fileName: "./testnet/components.json",
         edit: (parsedJson, file) => {
           testnetComponents.forEach((item, index) => {
-            if (item.key === "RawTxids") {
-              parsedJson.components.schemas.RawTxids.properties.txids.example =
-                item.value
-            }
-
-            if (item.key === "SLPTxids") {
-              parsedJson.components.schemas.SLPTxids.properties.txids.example =
-                item.value
-            }
-
             Object.keys(parsedJson.components.schemas).forEach(key => {
               if (
                 key === item.key &&
@@ -130,7 +120,7 @@ gulp.task("build", () => {
       .src("./swaggerJSONFilesBuilt/testnet/**/*.json")
       .pipe(
         merge({
-          fileName: "bitcoin-com-testnet-rest-v2.json"
+          fileName: "oracles-cash-testnet-rest-v1.json"
         })
       )
       .pipe(gulp.dest("./dist/public"))
@@ -201,16 +191,6 @@ gulp.task("build", () => {
         fileName: "./mainnet/components.json",
         edit: (parsedJson, file) => {
           mainnetComponents.forEach((item, index) => {
-            if (item.key === "RawTxids") {
-              parsedJson.components.schemas.RawTxids.properties.txids.example =
-                item.value
-            }
-
-            if (item.key === "SLPTxids") {
-              parsedJson.components.schemas.SLPTxids.properties.txids.example =
-                item.value
-            }
-
             Object.keys(parsedJson.components.schemas).forEach(key => {
               // console.log(key, parsedJson.components.schemas[key].properties)
               if (
@@ -253,7 +233,7 @@ gulp.task("build", () => {
       .src("./swaggerJSONFilesBuilt/mainnet/**/*.json")
       .pipe(
         merge({
-          fileName: "bitcoin-com-mainnet-rest-v2.json"
+          fileName: "oracles-cash-mainnet-rest-v1.json"
         })
       )
       .pipe(gulp.dest("./dist/public"))

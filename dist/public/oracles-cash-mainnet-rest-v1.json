@@ -1,0 +1,123 @@
+{
+	"components": {
+		"schemas": {
+			"PriceDetails": {
+				"type": "object",
+				"properties": {
+					"balance": {
+						"type": "number",
+						"format": "float"
+					},
+					"balanceSat": {
+						"type": "number",
+						"format": "float"
+					},
+					"totalReceived": {
+						"type": "number",
+						"format": "float"
+					},
+					"totalReceivedSat": {
+						"type": "number",
+						"format": "float"
+					},
+					"totalSent": {
+						"type": "number",
+						"format": "float"
+					},
+					"totalSentSat": {
+						"type": "number",
+						"format": "float"
+					},
+					"unconfirmedBalance": {
+						"type": "number",
+						"format": "float"
+					},
+					"unconfirmedBalanceSat": {
+						"type": "number",
+						"format": "float"
+					},
+					"unconfirmedTxAppearances": {
+						"type": "number",
+						"format": "float"
+					},
+					"txAppearances": {
+						"type": "number"
+					},
+					"transactions": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"legacyAddress": {
+						"type": "string"
+					},
+					"cashAddress": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	},
+	"openapi": "3.0.0",
+	"info": {
+		"description": "rest.bitcoin.com is the REST layer for Bitcoin.com's Cloud. More info: [developer.bitcoin.com/rest](https://developer.bitcoin.com/rest). Chatroom [geni.us/CashDev](http://geni.us/CashDev)",
+		"version": "3.12.4",
+		"title": "REST",
+		"license": {
+			"name": "MIT",
+			"url": "https://opensource.org/licenses/MIT"
+		}
+	},
+	"paths": {
+		"/prices/details": {
+			"get": {
+				"tags": [
+					"price"
+				],
+				"summary": "Price details",
+				"description": "Returns the BCH price details",
+				"operationId": "details",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "successful response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PriceDetails"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"status": 500,
+									"message": ""
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/v1"
+		}
+	],
+	"tags": [
+		{
+			"name": "price",
+			"description": "Price data",
+			"externalDocs": {
+				"description": "Find out more",
+				"url": "https://developer.bitcoin.com"
+			}
+		}
+	]
+}
