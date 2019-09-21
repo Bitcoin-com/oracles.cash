@@ -1,0 +1,68 @@
+{
+  "tags": [
+    {
+      "name": "address",
+      "description": "Address details and utxo",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://developer.bitcoin.com/rest/docs/address"
+      }
+    },
+    {
+      "name": "block",
+      "description": "Block Details",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://developer.bitcoin.com/rest/docs/block"
+      }
+    },
+    {
+      "name": "blockchain",
+      "description": "Interacting w/ the BCH Blockchain",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://developer.bitcoin.com/rest/docs/blockchain"
+      }
+    },
+    {
+      "name": "control",
+      "description": "Control your blockchain",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://developer.bitcoin.com/rest/docs/control"
+      }
+    },
+    {
+      "name": "mining",
+      "description": "Mining w/ the BCH Blockchain",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://developer.bitcoin.com/rest/docs/mining"
+      }
+    },
+    {
+      "name": "rawtransactions",
+      "description": "Create transactions to be transmitted to the network.",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://developer.bitcoin.com/rest/docs/rawtransactions"
+      }
+    },
+    {
+      "name": "transaction",
+      "description": "Transaction details.",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://developer.bitcoin.com/rest/docs/rawtransactions"
+      }
+    },
+    {
+      "name": "util",
+      "description": "Bitcoin Cash utilities.",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://developer.bitcoin.com/rest/docs/util"
+      }
+    }
+  ]
+}

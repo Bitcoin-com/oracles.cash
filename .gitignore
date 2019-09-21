@@ -1,0 +1,15 @@
+node_modules/
+.nyc_output/*
+.env
+start-local-server
+test-local-server
+coverage
+start-my-infra
+dist/routes/**
+nohup.out
+slp-tx-db/
+logs/
+package-lock.json
+yarn-error.log
+*.DS_Store
+./**/*.DS_STORE

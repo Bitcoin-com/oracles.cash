@@ -1,0 +1,1234 @@
+{
+	"components": {
+		"schemas": {
+			"Address": {
+				"type": "object",
+				"properties": {
+					"addresses": {
+						"type": "string"
+					},
+					"tokenIds": {
+						"type": "string"
+					}
+				}
+			},
+			"BalanceAddress": {
+				"type": "string"
+			},
+			"Hash": {
+				"type": "string"
+			},
+			"Txid": {
+				"type": "string"
+			},
+			"SLPConvert": {
+				"type": "object",
+				"properties": {
+					"addresses": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/SLPConvert"
+						},
+						"example": []
+					}
+				}
+			},
+			"SLPTxid": {
+				"type": "string"
+			},
+			"SLPTokenId": {
+				"type": "string"
+			},
+			"SLPAddress": {
+				"type": "string"
+			},
+			"RawTxid": {
+				"type": "string"
+			},
+			"Hex": {
+				"type": "string"
+			},
+			"Height": {
+				"type": "number"
+			},
+			"Proof": {
+				"type": "string"
+			},
+			"BalanceAddresses": {
+				"type": "array",
+				"items": {
+					"$ref": "#/components/schemas/BalanceAddress"
+				},
+				"example": []
+			},
+			"Addresses": {
+				"type": "object",
+				"properties": {
+					"addresses": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Address"
+						},
+						"example": [
+							"bitcoincash:qzs02v05l7qs5s24srqju498qu55dwuj0cx5ehjm2c",
+							"bitcoincash:qrehqueqhw629p6e57994436w730t4rzasnly00ht0"
+						]
+					}
+				}
+			},
+			"Hashes": {
+				"type": "object",
+				"properties": {
+					"hashes": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Hash"
+						},
+						"example": [
+							"000000000000000005e14d3f9fdfb70745308706615cfa9edca4f4558332b201",
+							"00000000000000000568f0a96bf4348847bc84e455cbfec389f27311037a20f3"
+						]
+					},
+					"verbose": {
+						"type": "boolean",
+						"example": true
+					}
+				}
+			},
+			"BlockHashes": {
+				"type": "object",
+				"properties": {
+					"hashes": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Hash"
+						},
+						"example": []
+					}
+				}
+			},
+			"BlockHeights": {
+				"type": "object",
+				"properties": {
+					"heights": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Heights"
+						},
+						"example": []
+					}
+				}
+			},
+			"Heights": {
+				"type": "object",
+				"properties": {
+					"heights": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Heights"
+						},
+						"example": []
+					}
+				}
+			},
+			"Hexes": {
+				"type": "object",
+				"properties": {
+					"hexes": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Hex"
+						},
+						"example": [
+							"01000000013ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a000000006a4730440220540986d1c58d6e76f8f05501c520c38ce55393d0ed7ed3c3a82c69af04221232022058ea43ed6c05fec0eccce749a63332ed4525460105346f11108b9c26df93cd72012103083dfc5a0254613941ddc91af39ff90cd711cdcde03a87b144b883b524660c39ffffffff01807c814a000000001976a914d7e7c4e0b70eaa67ceff9d2823d1bbb9f6df9a5188ac00000000",
+							"01000000013ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a000000006a4730440220540986d1c58d6e76f8f05501c520c38ce55393d0ed7ed3c3a82c69af04221232022058ea43ed6c05fec0eccce749a63332ed4525460105346f11108b9c26df93cd72012103083dfc5a0254613941ddc91af39ff90cd711cdcde03a87b144b883b524660c39ffffffff01807c814a000000001976a914d7e7c4e0b70eaa67ceff9d2823d1bbb9f6df9a5188ac00000000"
+						]
+					}
+				}
+			},
+			"Txids": {
+				"type": "object",
+				"properties": {
+					"txids": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Txid"
+						},
+						"example": [
+							"a5f972572ee1753e2fd2457dd61ce5f40fa2f8a30173d417e49feef7542c96a1",
+							"5165dc531aad05d1149bb0f0d9b7bda99c73e2f05e314bcfb5b4bb9ca5e1af5e"
+						]
+					}
+				}
+			},
+			"SLPListBulk": {
+				"type": "object",
+				"properties": {
+					"tokenIds": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/SLPListBulk"
+						},
+						"example": []
+					}
+				}
+			},
+			"SLPTxids": {
+				"type": "object",
+				"properties": {
+					"txids": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/SLPTxid"
+						},
+						"example": [
+							"88b121101d71b73599dfc7d79eead599031912b2c48298bf5c1f37f4dd743ffa",
+							"fb0eeaa501a6e1acb721669c62a3f70741f48ae0fd7f4b8e1d72088785c51952"
+						]
+					}
+				}
+			},
+			"SLPTokenIds": {
+				"type": "object",
+				"properties": {
+					"tokenIds": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/SLPTokenId"
+						},
+						"example": []
+					}
+				}
+			},
+			"SLPAddresses": {
+				"type": "object",
+				"properties": {
+					"addresses": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/SLPAddress"
+						},
+						"example": []
+					}
+				}
+			},
+			"RawTxids": {
+				"type": "object",
+				"properties": {
+					"txids": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/RawTxid"
+						},
+						"example": [
+							"a5f972572ee1753e2fd2457dd61ce5f40fa2f8a30173d417e49feef7542c96a1",
+							"5165dc531aad05d1149bb0f0d9b7bda99c73e2f05e314bcfb5b4bb9ca5e1af5e"
+						]
+					},
+					"verbose": {
+						"type": "boolean",
+						"example": true
+					}
+				}
+			},
+			"Proofs": {
+				"type": "object",
+				"properties": {
+					"proofs": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Proof"
+						},
+						"example": [
+							"010000007de867cc8adc5cc8fb6b898ca4462cf9fd667d7830a275277447e60800000000338f121232e169d3100edd82004dc2a1f0e1f030c6c488fa61eafa930b0528fe021f7449ffff001d36b4af9a0100000001338f121232e169d3100edd82004dc2a1f0e1f030c6c488fa61eafa930b0528fe0101",
+							"000000202cbe31a32f4ad5b42877a9ccf9ff6edb3f5ab29ff73ec9000000000000000000069061a8809fed6557fa87eeb5aa7ac9e6720dcb2e2f401b40b7d83be5b4cb4f20a1e95b8c8d01188ca7c098e20100000a3705adb29177f22766afb07d46eb1d3f16a68fdd01c1ede671fcb954899ffed4c161c0a33aa8f6e562e40b1e0124818663e063004720d8d7e9074808a1f16ca56ba218571cb8069bc45bc8c6496ad9611b35d412e2545211ba85438be487d6dc39cd0ae63a41be9a89c4ed823fa6eceb0ceffe13638defa01109a514e639b89e5eafe1a59cbbb4b5cf4b315ef0e2739ca9bdb7d9f0b09b14d105ad1a53dc655176895cacc3f897d5088b004113f886df266edd1ff797f4550885f32380c8fb575be00072239baa70ccf354882e8c50a1d01e81ab2c85146d9e8c3c75140eca2d9d5640af739a86047493e24b1393745914a75fdfe19f081626a5846353c67b45ccf2dd6a753ba118e89239b7916be2ee06e34dc85257228edeaaca06efa0a565580872eff1787360bdf7ff274bb49437bef6a368ab578e34b739ddcc16088a8603ad3700"
+						]
+					}
+				}
+			},
+			"AddressDetails": {
+				"type": "object",
+				"properties": {
+					"balance": {
+						"type": "number",
+						"format": "float"
+					},
+					"balanceSat": {
+						"type": "number",
+						"format": "float"
+					},
+					"totalReceived": {
+						"type": "number",
+						"format": "float"
+					},
+					"totalReceivedSat": {
+						"type": "number",
+						"format": "float"
+					},
+					"totalSent": {
+						"type": "number",
+						"format": "float"
+					},
+					"totalSentSat": {
+						"type": "number",
+						"format": "float"
+					},
+					"unconfirmedBalance": {
+						"type": "number",
+						"format": "float"
+					},
+					"unconfirmedBalanceSat": {
+						"type": "number",
+						"format": "float"
+					},
+					"unconfirmedTxAppearances": {
+						"type": "number",
+						"format": "float"
+					},
+					"txAppearances": {
+						"type": "number"
+					},
+					"transactions": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"legacyAddress": {
+						"type": "string"
+					},
+					"cashAddress": {
+						"type": "string"
+					}
+				}
+			},
+			"AddressDetailsArray": {
+				"type": "array",
+				"items": {
+					"$ref": "#/components/schemas/AddressDetails"
+				}
+			},
+			"AddressUtxo": {
+				"type": "array",
+				"items": {
+					"$ref": "#/components/schemas/Utxo"
+				}
+			},
+			"AddressUtxoArray": {
+				"type": "array",
+				"items": {
+					"$ref": "#/components/schemas/AddressUtxo"
+				},
+				"example": []
+			},
+			"Utxo": {
+				"type": "object",
+				"properties": {
+					"txid": {
+						"type": "string"
+					},
+					"vout": {
+						"type": "number"
+					},
+					"scriptPubKey": {
+						"type": "string"
+					},
+					"amount": {
+						"type": "number",
+						"format": "float"
+					},
+					"satoshis": {
+						"type": "number"
+					},
+					"height": {
+						"type": "number"
+					},
+					"confirmations": {
+						"type": "number"
+					},
+					"legacyAddress": {
+						"type": "string"
+					},
+					"cashAddress": {
+						"type": "string"
+					}
+				}
+			},
+			"AddressUnconfirmed": {
+				"type": "array",
+				"items": {
+					"$ref": "#/components/schemas/Unconfirmed"
+				}
+			},
+			"AddressUnconfirmedArray": {
+				"type": "array",
+				"items": {
+					"$ref": "#/components/schemas/AddressUnconfirmed"
+				},
+				"example": []
+			},
+			"Unconfirmed": {
+				"type": "object",
+				"properties": {
+					"txid": {
+						"type": "string"
+					},
+					"vout": {
+						"type": "number"
+					},
+					"scriptPubKey": {
+						"type": "string"
+					},
+					"amount": {
+						"type": "number",
+						"format": "float"
+					},
+					"satoshis": {
+						"type": "number"
+					},
+					"height": {
+						"type": "number"
+					},
+					"confirmations": {
+						"type": "number"
+					},
+					"legacyAddress": {
+						"type": "string"
+					},
+					"cashAddress": {
+						"type": "string"
+					}
+				}
+			},
+			"BlockDetails": {
+				"type": "object",
+				"properties": {
+					"hash": {
+						"type": "string"
+					},
+					"size": {
+						"type": "number"
+					},
+					"height": {
+						"type": "number"
+					},
+					"version": {
+						"type": "number"
+					},
+					"merkleroot": {
+						"type": "string"
+					},
+					"tx": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"time": {
+						"type": "number"
+					},
+					"nonce": {
+						"type": "number"
+					},
+					"bits": {
+						"type": "string"
+					},
+					"difficulty": {
+						"type": "number",
+						"format": "float"
+					},
+					"chainwork": {
+						"type": "string"
+					},
+					"confirmations": {
+						"type": "number"
+					},
+					"previousblockhash": {
+						"type": "string"
+					},
+					"nextblockhash": {
+						"type": "string"
+					},
+					"reward": {
+						"type": "number",
+						"format": "float"
+					},
+					"isMainChain": {
+						"type": "boolean"
+					},
+					"poolInfo": {
+						"type": "object",
+						"properties": {
+							"poolName": "string",
+							"url": "string"
+						}
+					}
+				}
+			},
+			"BestBlockHash": {
+				"type": "string"
+			},
+			"Block": {
+				"type": "object",
+				"properties": {
+					"hash": {
+						"type": "string"
+					},
+					"confirmations": {
+						"type": "number"
+					},
+					"size": {
+						"type": "number"
+					},
+					"height": {
+						"type": "number"
+					},
+					"version": {
+						"type": "number"
+					},
+					"versionHex": {
+						"type": "string"
+					},
+					"merkleroot": {
+						"type": "string"
+					},
+					"tx": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"time": {
+						"type": "number"
+					},
+					"mediantime": {
+						"type": "number"
+					},
+					"nonce": {
+						"type": "number"
+					},
+					"bits": {
+						"type": "string"
+					},
+					"difficulty": {
+						"type": "number",
+						"format": "float"
+					},
+					"chainwork": {
+						"type": "string"
+					},
+					"previousblockhash": {
+						"type": "string"
+					},
+					"nextblockhash": {
+						"type": "string"
+					}
+				}
+			},
+			"BlockchainInfo": {
+				"type": "object",
+				"properties": {
+					"chain": {
+						"type": "string"
+					},
+					"blocks": {
+						"type": "number"
+					},
+					"headers": {
+						"type": "number"
+					},
+					"bestblockhash": {
+						"type": "string"
+					},
+					"difficulty": {
+						"type": "number",
+						"format": "float"
+					},
+					"mediantime": {
+						"type": "number"
+					},
+					"verificationprogress": {
+						"type": "number",
+						"format": "float"
+					},
+					"chainwork": {
+						"type": "string"
+					},
+					"pruned": {
+						"type": "boolean"
+					},
+					"softforks": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"id": "string",
+								"version": "number",
+								"reject": {
+									"type": "object",
+									"properties": {
+										"status": "boolean"
+									}
+								}
+							}
+						}
+					},
+					"bip9_softforks": {
+						"type": "object",
+						"properties": {
+							"status": "string",
+							"startTime": "number",
+							"timeout": "number",
+							"since": "number"
+						}
+					}
+				}
+			},
+			"BlockCount": {
+				"type": "number"
+			},
+			"BlockHash": {
+				"type": "string"
+			},
+			"BlockHeader": {
+				"type": "object",
+				"properties": {
+					"hash": {
+						"type": "string"
+					},
+					"confirmations": {
+						"type": "number"
+					},
+					"height": {
+						"type": "number"
+					},
+					"version": {
+						"type": "number"
+					},
+					"versionHex": {
+						"type": "string"
+					},
+					"merkleroot": {
+						"type": "string"
+					},
+					"time": {
+						"type": "number"
+					},
+					"mediantime": {
+						"type": "number"
+					},
+					"nonce": {
+						"type": "number"
+					},
+					"bits": {
+						"type": "string"
+					},
+					"difficulty": {
+						"type": "number",
+						"format": "float"
+					},
+					"chainwork": {
+						"type": "string"
+					},
+					"previousblockhash": {
+						"type": "string"
+					},
+					"nextblockhash": {
+						"type": "string"
+					}
+				}
+			},
+			"Difficulty": {
+				"type": "number",
+				"format": "float"
+			},
+			"MempoolInfo": {
+				"type": "object",
+				"properties": {
+					"size": {
+						"type": "number"
+					},
+					"bytes": {
+						"type": "number"
+					},
+					"usage": {
+						"type": "number"
+					},
+					"maxmempool": {
+						"type": "number"
+					},
+					"mempoolminfee": {
+						"type": "number"
+					}
+				}
+			},
+			"RawMempool": {
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"DecodeRawTransaction": {
+				"type": "object",
+				"properties": {
+					"txid": {
+						"type": "string"
+					},
+					"hash": {
+						"type": "string"
+					},
+					"size": {
+						"type": "number"
+					},
+					"version": {
+						"type": "number"
+					},
+					"vin": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"txid": {
+									"type": "string"
+								},
+								"vout": {
+									"type": "number"
+								},
+								"scriptSig": {
+									"type": "object",
+									"properties": {
+										"asm": {
+											"type": "string"
+										},
+										"hex": {
+											"type": "string"
+										}
+									}
+								},
+								"sequence": {
+									"type": "string"
+								}
+							}
+						}
+					},
+					"vout": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"value": {
+									"type": "number"
+								},
+								"n": {
+									"type": "number"
+								},
+								"scriptPubkey": {
+									"type": "object",
+									"properties": {
+										"asm": {
+											"type": "string"
+										},
+										"hex": {
+											"type": "string"
+										},
+										"reqSigs": {
+											"type": "number"
+										},
+										"type": {
+											"type": "string"
+										},
+										"addresses": {
+											"type": "array",
+											"items": {
+												"address": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"DecodeScript": {
+				"type": "object",
+				"properties": {
+					"asm": {
+						"type": "string"
+					},
+					"type": {
+						"type": "string"
+					},
+					"p2sh": {
+						"type": "string"
+					}
+				}
+			},
+			"GetRawTransaction": {
+				"type": "object",
+				"properties": {
+					"hex": {
+						"type": "string"
+					},
+					"txid": {
+						"type": "string"
+					},
+					"hash": {
+						"type": "string"
+					},
+					"size": {
+						"type": "number"
+					},
+					"version": {
+						"type": "number"
+					},
+					"vin": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"txid": {
+									"type": "string"
+								},
+								"vout": {
+									"type": "number"
+								},
+								"scriptSig": {
+									"type": "object",
+									"properties": {
+										"asm": {
+											"type": "string"
+										},
+										"hex": {
+											"type": "string"
+										},
+										"sequence": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					},
+					"vout": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"value": {
+									"type": "number"
+								},
+								"n": {
+									"type": "number"
+								},
+								"scriptPubkey": {
+									"type": "object",
+									"properties": {
+										"asm": {
+											"type": "string"
+										},
+										"hex": {
+											"type": "string"
+										},
+										"reqSigs": {
+											"type": "number"
+										},
+										"type": {
+											"type": "string"
+										},
+										"addresses": {
+											"type": "array",
+											"items": {
+												"address": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"blockhash": {
+						"type": "string"
+					},
+					"confirmations": {
+						"type": "number"
+					},
+					"time": {
+						"type": "number"
+					},
+					"blocktime": {
+						"type": "number"
+					}
+				}
+			},
+			"TransactionDetails": {
+				"type": "object",
+				"properties": {
+					"txid": {
+						"type": "string"
+					},
+					"version": {
+						"type": "number"
+					},
+					"locktime": {
+						"type": "number"
+					},
+					"vin": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"txid": {
+									"type": "string"
+								},
+								"vout": {
+									"type": "number"
+								},
+								"sequence": {
+									"type": "number"
+								},
+								"n": {
+									"type": "number"
+								},
+								"scriptSig": {
+									"type": "object",
+									"properties": {
+										"hex": {
+											"type": "string"
+										},
+										"asm": {
+											"type": "string"
+										},
+										"value": {
+											"type": "number"
+										},
+										"legacyAddress": {
+											"type": "string"
+										},
+										"cashAddress": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					},
+					"vout": {
+						"type": "array",
+						"items": {
+							"objects": {
+								"type": "object",
+								"properties": {
+									"value": {
+										"type": "number"
+									},
+									"n": {
+										"type": "number"
+									},
+									"scriptPubkey": {
+										"type": "object",
+										"properties": {
+											"hex": {
+												"type": "string"
+											},
+											"asm": {
+												"type": "string"
+											},
+											"addresses": {
+												"type": "array",
+												"items": {
+													"address": {
+														"type": "string"
+													}
+												}
+											},
+											"type": {
+												"type": "string"
+											}
+										}
+									},
+									"spentTxId": {
+										"type": "string"
+									},
+									"spentIndex": {
+										"type": "number"
+									},
+									"spentHeight": {
+										"type": "number"
+									}
+								}
+							},
+							"type": "object",
+							"properties": {
+								"value": {
+									"type": "number"
+								},
+								"n": {
+									"type": "number"
+								},
+								"scriptPubkey": {
+									"type": "object",
+									"properties": {
+										"hex": {
+											"type": "string"
+										},
+										"asm": {
+											"type": "string"
+										}
+									}
+								},
+								"spentTxId": {
+									"type": "string"
+								},
+								"spentIndex": {
+									"type": "number"
+								},
+								"spentHeight": {
+									"type": "number"
+								}
+							}
+						}
+					},
+					"blockhash": {
+						"type": "string"
+					},
+					"blockheight": {
+						"type": "number"
+					},
+					"confirmations": {
+						"type": "number"
+					},
+					"time": {
+						"type": "number"
+					},
+					"valueOut": {
+						"type": "number"
+					},
+					"size": {
+						"type": "number"
+					},
+					"valueIn": {
+						"type": "number"
+					},
+					"fees": {
+						"type": "number"
+					}
+				}
+			},
+			"ValidateAddress": {
+				"type": "object",
+				"properties": {
+					"isvalid": {
+						"type": "boolean"
+					},
+					"address": {
+						"type": "string"
+					},
+					"scriptPubKey": {
+						"type": "string"
+					},
+					"ismine": {
+						"type": "boolean"
+					},
+					"iswatchonly": {
+						"type": "boolean"
+					},
+					"isscript": {
+						"type": "boolean"
+					}
+				}
+			},
+			"Info": {
+				"type": "object",
+				"properties": {
+					"version": {
+						"type": "number"
+					},
+					"protocolversion": {
+						"type": "number"
+					},
+					"blocks": {
+						"type": "number"
+					},
+					"timeoffset": {
+						"type": "number"
+					},
+					"connections": {
+						"type": "number"
+					},
+					"proxy": {
+						"type": "string"
+					},
+					"difficulty": {
+						"type": "number",
+						"format": "float"
+					},
+					"paytxfee": {
+						"type": "number"
+					},
+					"relayfee": {
+						"type": "number",
+						"format": "float"
+					},
+					"errors": {
+						"type": "string"
+					}
+				}
+			},
+			"NetworkInfo": {
+				"type": "object",
+				"properties": {
+					"version": {
+						"type": "number"
+					},
+					"subversion": {
+						"type": "string"
+					},
+					"protocolversion": {
+						"type": "number"
+					},
+					"localservices": {
+						"type": "string"
+					},
+					"localrelay": {
+						"type": "boolean"
+					},
+					"timeoffset": {
+						"type": "number"
+					},
+					"networkactive": {
+						"type": "boolean"
+					},
+					"connections": {
+						"type": "number"
+					},
+					"networks": [
+						{
+							"name": {
+								"type": "string"
+							},
+							"limited": {
+								"type": "boolean"
+							},
+							"reachable": {
+								"type": "boolean"
+							},
+							"proxy": {
+								"type": "string"
+							},
+							"proxy_randomize_credentials": {
+								"type": "boolean"
+							}
+						}
+					],
+					"relayfee": {
+						"type": "number"
+					},
+					"excessutxocharge": {
+						"type": "number"
+					},
+					"warnings": {
+						"type": "string"
+					}
+				}
+			},
+			"MemoryInfo": {
+				"type": "object",
+				"properties": {
+					"locked": {
+						"type": "object",
+						"properties": {
+							"used": {
+								"type": "number"
+							},
+							"free": {
+								"type": "number"
+							},
+							"total": {
+								"type": "number"
+							},
+							"locked": {
+								"type": "number"
+							},
+							"chunks_used": {
+								"type": "number"
+							},
+							"chunks_free": {
+								"type": "number"
+							}
+						}
+					}
+				}
+			},
+			"MiningInfo": {
+				"type": "object",
+				"properties": {
+					"blocks": {
+						"type": "number"
+					},
+					"currentblocksize": {
+						"type": "number"
+					},
+					"currentblocktx": {
+						"type": "number"
+					},
+					"difficulty": {
+						"type": "number",
+						"format": "float"
+					},
+					"blockprioritypercentage": {
+						"type": "number"
+					},
+					"errors": {
+						"type": "string"
+					},
+					"networkhashps": {
+						"type": "number"
+					},
+					"pooledtx": {
+						"type": "number"
+					},
+					"chain": {
+						"type": "string"
+					}
+				}
+			},
+			"NetworkHashps": {
+				"type": "number"
+			},
+			"ConnectionCount": {
+				"type": "number"
+			},
+			"MempoolAncestors": {
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"MempoolDescendants": {
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"CashAccount": {
+				"type": "object",
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"cashAddress": {
+						"type": "string"
+					},
+					"slpAddress": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}

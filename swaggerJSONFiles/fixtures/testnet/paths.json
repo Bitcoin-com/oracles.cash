@@ -1,0 +1,157 @@
+[
+  {
+    "key": "/address/details/{address}",
+    "name": "address",
+    "value": "bchtest:qz35h5mfa8w2pqma2jq06lp7dnv5fxkp2svtllzmlf"
+  },
+  {
+    "key": "/address/utxo/{address}",
+    "name": "address",
+    "value": "bchtest:qz35h5mfa8w2pqma2jq06lp7dnv5fxkp2svtllzmlf"
+  },
+  {
+    "key": "/address/unconfirmed/{address}",
+    "name": "address",
+    "value": "bchtest:qz35h5mfa8w2pqma2jq06lp7dnv5fxkp2svtllzmlf"
+  },
+  {
+    "key": "/address/transactions/{address}",
+    "name": "address",
+    "value": "bchtest:qz35h5mfa8w2pqma2jq06lp7dnv5fxkp2svtllzmlf"
+  },
+  {
+    "key": "/address/fromXPub/{xpub}",
+    "name": "xpub",
+    "value": "tpubDHTK2jqg73w3GwoiHfAMbMYML1HN8FhrUxD9rFgbSgHXdwwrY6pAFqKDfUHhqw7vreaZty5hPGjb1S7ZPQeMmu6TFHAKfY9tJpYbvaGjPRM"
+  },
+  {
+    "key": "/block/detailsByHash/{hash}",
+    "name": "hash",
+    "value": "0000000000262e9a70fae6c38cc9a91af2819b04521d2e9e99b7ae0328ee429d"
+  },
+  {
+    "key": "/block/detailsByHeight/{height}",
+    "name": "height",
+    "value": "500000"
+  },
+  {
+    "key": "/blockchain/getBlockHeader/{hash}",
+    "name": "hash",
+    "value": "0000000000262e9a70fae6c38cc9a91af2819b04521d2e9e99b7ae0328ee429d"
+  },
+  {
+    "key": "/blockchain/getBlockHeader/{hash}",
+    "name": "verbose",
+    "value": true
+  },
+  {
+    "key": "/blockchain/getMempoolEntry/{txid}",
+    "name": "txid",
+    "value": "40112ab9d2b5f98427839272d7a1e23dd2afc6c8355626f373e076c2ab5c2f72"
+  },
+  {
+    "key": "/blockchain/getRawMempool",
+    "name": "verbose",
+    "value": true
+  },
+  {
+    "key": "/blockchain/getTxOut/{txid}/{n}",
+    "name": "txid",
+    "value": "40112ab9d2b5f98427839272d7a1e23dd2afc6c8355626f373e076c2ab5c2f72"
+  },
+  {
+    "key": "/blockchain/getTxOut/{txid}/{n}",
+    "name": "n",
+    "value": 0
+  },
+  {
+    "key": "/blockchain/getTxOut/{txid}/{n}",
+    "name": "mempool",
+    "value": "false"
+  },
+  {
+    "key": "/blockchain/getTxOutProof/{txids}",
+    "name": "txids",
+    "value": "40112ab9d2b5f98427839272d7a1e23dd2afc6c8355626f373e076c2ab5c2f72"
+  },
+  {
+    "key": "/blockchain/verifyTxOutProof/{proof}",
+    "name": "proof",
+    "value": "00000020166b6d1080a6d0a48a6c3556e275e86606ae217d7f9c53723b03000000000000a7b3c46a4c4b46cce03ebfe8b7cc32759e4f0dece66a20fb7d79577aadc8edf69425185cffff001d2261092aff00000009e8bfb50fb37d3f40b53eb8229f031a30e897aa9880d6b4db37cbb7c2b83b1e4f609b5095caa6d37d0a374b92e197fd424540f66999c0b6b50681a9ccf2e05ff2722f5cabc276e073f3265635c8c6afd23de2a1d77292832784f9b5d2b92a11408e66784a2e2183a898b03267c115da1b78cf0cd275d83c3cc22bb96940635c41669843b5c9211b26604659ad5943cf2b33217f69f6d67d728ee34bda219ede0a626804059d2540cd7f50114794c6ff18b6a790c671ba488525819c13fd32101932fd3506c9305134c6839c2945b8239ba52a60ac10577d6dc6b158e3c179bb91a7911dc11f8c5f052f808ef76c25ed638aaca31eb045a35ef00718718a0ad914607937c8c3dcee995ac145476cb4d83a4250f46c46990df568b6ee0796b3995f03bb0700"
+  },
+  {
+    "key": "/mining/getNetworkHashps",
+    "name": "nblocks",
+    "value": 120
+  },
+  {
+    "key": "/mining/getNetworkHashps",
+    "name": "height",
+    "value": -1
+  },
+  {
+    "key": "/rawtransactions/decodeRawTransaction/{hex}",
+    "name": "hex",
+    "value": "02000000010e991f7ccec410f27d333f737f149b5d3be6728687da81072e638aed0063a176010000006b483045022100cd20443b0af090053450bc4ab00d563d4ac5955bb36e0135b00b8a96a19f233302205047f2c70a08c6ef4b76f2d198b33a31d17edfaa7e1e9e865894da0d396009354121024d4e7f522f67105b7bf5f9dbe557e7b2244613fdfcd6fe09304f93877328f6beffffffff02a0860100000000001976a9140ee020c07f39526ac5505c54fa1ab98490979b8388acb5f0f70b000000001976a9143a9b2b0c12fe722fcf653b6ef5dcc38732d6ff5188ac00000000"
+  },
+  {
+    "key": "/rawtransactions/decodeScript/{hex}",
+    "name": "hex",
+    "value": "02000000012d2ec73b12ecb96fbf104fa0325e39bc4e49818709594ba2128635aedfb820a1010000006a47304402203c63866eab7ffca27ed6437a028de9b2cc83dd1ed96f0f496742cf70c6ca50b8022007f3c7fc8729f52d8d0e626c6328012691fa6b3a317c66408e2ccc84a6538e9741210360cfc66fdacb650bc4c83b4e351805181ee696b7d5ab4667c57b2786f51c413dffffffff036a929800000000001976a914eb4b180def88e3f5625b2d8ae2c098ff7d85f66488ac00000000000000006a6a4c67087768630000003201000800000000426974636f696e2e636f6d00426974636f696e20466978656420546f6b656e20546573740054535400646576656c6f7065722e626974636f696e2e636f6d004d616465207769746820424954424f5800000000174876e80022020000000000001976a914eb4b180def88e3f5625b2d8ae2c098ff7d85f66488ac00000000"
+  },
+  {
+    "key": "/rawtransactions/getRawTransaction/{txid}",
+    "name": "txid",
+    "value": "40112ab9d2b5f98427839272d7a1e23dd2afc6c8355626f373e076c2ab5c2f72"
+  },
+  {
+    "key": "/rawtransactions/getRawTransaction/{txid}",
+    "name": "verbose",
+    "value": true
+  },
+  {
+    "key": "/transaction/details/{txid}",
+    "name": "txid",
+    "value": "40112ab9d2b5f98427839272d7a1e23dd2afc6c8355626f373e076c2ab5c2f72"
+  },
+  {
+    "key": "/util/validateAddress/{address}",
+    "name": "address",
+    "value": "bchtest:qz35h5mfa8w2pqma2jq06lp7dnv5fxkp2svtllzmlf"
+  },
+  {
+    "key": "/rawtransactions/decodeTransaction/{rawTx}",
+    "name": "rawTx",
+    "value": "02000000016ad673a59a43d70ec537ed1a7cc5b867e1bbbddde47a26164c2927530fae5951010000006a47304402206754d05ef05760ef9eb6d5b80deb174864768876067a261617a69cdbb9295179022022e223153eec7c1b511a4de3e618b952d7d2df925f5f1f9e006193c1cf6f507c4121024d4e7f522f67105b7bf5f9dbe557e7b2244613fdfcd6fe09304f93877328f6beffffffff039fecf70b000000001976a9143a9b2b0c12fe722fcf653b6ef5dcc38732d6ff5188ac0000000000000000166a1408776863000000000000022c0000000005f5e10022020000000000001976a9140ee020c07f39526ac5505c54fa1ab98490979b8388ac00000000"
+  },
+  {
+    "key": "/blockchain/getTxOutProof/{txid}",
+    "name": "txid",
+    "value": "40112ab9d2b5f98427839272d7a1e23dd2afc6c8355626f373e076c2ab5c2f72"
+  },
+  {
+    "key": "/slp/list/{tokenId}",
+    "name": "tokenId",
+    "value": "650dea14c77f4d749608e36e375450c9ac91deb8b1b53e50cb0de2059a52d19a"
+  },
+  {
+    "key": "/slp/balancesForAddress/{address}",
+    "name": "address",
+    "value": "slptest:qz35h5mfa8w2pqma2jq06lp7dnv5fxkp2shlcycvd5"
+  },
+  {
+    "key": "/slp/address/convert/{address}",
+    "name": "address",
+    "value": "slptest:qz35h5mfa8w2pqma2jq06lp7dnv5fxkp2shlcycvd5"
+  },
+  {
+    "key": "/slp/txDetails/{txid}",
+    "name": "txid",
+    "value": "57b3082a2bf269b3d6f40fee7fb9c664e8256a88ca5ee2697c05b9457822d446"
+  },
+  {
+    "key": "/slp/burnTotal/{transactionId}",
+    "name": "transactionId",
+    "value": "2c90f44dbb0a3257ded2c30d46d387490aee61eecd168534c8b645ffe21cbc50"
+  }
+]
