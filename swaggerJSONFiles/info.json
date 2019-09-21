@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "description": "The Bitcoin Cash JSON PRC over HTTP",
-    "version": "3.12.4",
-    "title": "REST",
+    "description": "Oracles on Bitcoin Cash",
+    "version": "0.1.1",
+    "title": "oracles.cash",
     "license": {
       "name": "MIT",
       "url": "https://opensource.org/licenses/MIT"
