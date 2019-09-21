@@ -4,56 +4,13 @@
       "PriceDetails": {
         "type": "object",
         "properties": {
-          "balance": {
-            "type": "number",
-            "format": "float"
+          "message": {
+            "type": "string",
+            "format": "hex"
           },
-          "balanceSat": {
-            "type": "number",
-            "format": "float"
-          },
-          "totalReceived": {
-            "type": "number",
-            "format": "float"
-          },
-          "totalReceivedSat": {
-            "type": "number",
-            "format": "float"
-          },
-          "totalSent": {
-            "type": "number",
-            "format": "float"
-          },
-          "totalSentSat": {
-            "type": "number",
-            "format": "float"
-          },
-          "unconfirmedBalance": {
-            "type": "number",
-            "format": "float"
-          },
-          "unconfirmedBalanceSat": {
-            "type": "number",
-            "format": "float"
-          },
-          "unconfirmedTxAppearances": {
-            "type": "number",
-            "format": "float"
-          },
-          "txAppearances": {
-            "type": "number"
-          },
-          "transactions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "legacyAddress": {
-            "type": "string"
-          },
-          "cashAddress": {
-            "type": "string"
+          "signature": {
+            "type": "string",
+            "format": "hex"
           }
         }
       }

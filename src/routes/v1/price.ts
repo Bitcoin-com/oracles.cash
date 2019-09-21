@@ -1,8 +1,10 @@
 // imports
+import axios, { AxiosResponse } from "axios"
 import { BITBOX } from "bitbox-sdk"
+import { HDNode } from "bitcoincashjs-lib"
 import * as express from "express"
 import * as util from "util"
-import logger = require("./logging.js")
+import { PriceOracle } from "./PriceOracle"
 import routeUtils = require("./route-utils")
 import wlogger = require("../../util/winston-logging")
 
@@ -11,14 +13,16 @@ const router: express.Router = express.Router()
 const bitbox: BITBOX = new BITBOX()
 const SLPSDK: any = require("slp-sdk")
 const SLP: any = new SLPSDK()
-let Utils = SLP.slpjs.Utils
+const network: string = "testnet"
+
+const rootSeed: Buffer = bitbox.Mnemonic.toSeed("")
+const hdNode: HDNode = bitbox.HDNode.fromSeed(rootSeed, network)
+const oracle: PriceOracle = new PriceOracle(
+  bitbox.HDNode.toKeyPair(bitbox.HDNode.derive(hdNode, 1))
+)
 
 // Used for processing error messages before sending them to the user.
 util.inspect.defaultOptions = { depth: 1 }
-
-// Use the default (and max) page size of 1000
-// https://github.com/bitpay/insight-api#notes-on-upgrading-from-v03
-const PAGE_SIZE: number = 1000
 
 // Connect the route endpoints to their handler functions.
 router.get("/", root)
@@ -30,7 +34,7 @@ function root(
   res: express.Response,
   next: express.NextFunction
 ): express.Response {
-  return res.json({ status: "address" })
+  return res.json({ status: "price" })
 }
 
 async function details(
@@ -39,10 +43,19 @@ async function details(
   next: express.NextFunction
 ): Promise<express.Response> {
   try {
-    // Return the retrieved address information.
+    let getBlockCount = await bitbox.Blockchain.getBlockCount()
+    const response: AxiosResponse = await axios.get(
+      `https://index-api.bitcoin.com/api/v0/cash/price/usd`
+    )
+    const oracleMessage: Buffer = oracle.createMessage(
+      getBlockCount,
+      response.data.price
+    )
+    const oracleSignature: Buffer = oracle.signMessage(oracleMessage)
     res.status(200)
     return res.json({
-      data: "all good"
+      message: oracleMessage.toString("hex"),
+      signature: oracleSignature.toString("hex")
     })
   } catch (err) {
     // Attempt to decode the error message.
