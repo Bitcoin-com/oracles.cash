@@ -4,6 +4,12 @@
 			"PriceDetails": {
 				"type": "object",
 				"properties": {
+					"price": {
+						"type": "number"
+					},
+					"height": {
+						"type": "number"
+					},
 					"message": {
 						"type": "string",
 						"format": "hex"

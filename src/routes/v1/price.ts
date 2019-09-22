@@ -54,6 +54,8 @@ async function details(
     const oracleSignature: Buffer = oracle.signMessage(oracleMessage)
     res.status(200)
     return res.json({
+      price: response.data.price,
+      height: getBlockCount,
       message: oracleMessage.toString("hex"),
       signature: oracleSignature.toString("hex")
     })
