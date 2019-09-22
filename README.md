@@ -110,4 +110,4 @@ Next update the following line to have a valid block height and BCH price
 const oracleMessage: Buffer = oracle.createMessage(597000, 30000)
 ```
 
-Keep in mind that the blockheight
+Keep in mind that the blockheight and price must be greater than what you passed in when you instantiated the contract.
