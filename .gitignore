@@ -9,7 +9,8 @@ dist/routes/**
 nohup.out
 slp-tx-db/
 logs/
-package-lock.json
+#package-lock.json
+yarn.lock
 yarn-error.log
 *.DS_Store
 ./**/*.DS_STORE
