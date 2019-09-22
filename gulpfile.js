@@ -2,7 +2,6 @@
 const gulp = require("gulp")
 const fs = require("fs-extra")
 const merge = require("gulp-merge-json")
-const jsonModify = require("gulp-json-modify")
 
 const ASSET_FILES = [
   "src/*.json",
