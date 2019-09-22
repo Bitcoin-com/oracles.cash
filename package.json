@@ -34,7 +34,8 @@
     "passport-http": "^0.3.0",
     "slp-sdk": "4.3.0",
     "strftime": "^0.10.0",
-    "ts-node": "^8.4.1"
+    "ts-node": "^8.4.1",
+    "typescript": "^3.1.4"
   },
   "devDependencies": {
     "@types/express": "^4.16.0",
@@ -45,8 +46,7 @@
     "prettier": "^1.14.2",
     "proxyquire": "^2.1.0",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2",
-    "typescript": "^3.1.4"
+    "request-promise": "^4.2.2"
   },
   "release": {
     "publish": [
