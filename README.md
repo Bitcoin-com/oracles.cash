@@ -49,6 +49,23 @@ Credit to [Rosco Khalis](https://twitter.com/RoscoKalis), creator of CashScript,
 `./src/routes/v1/contracts/hodl_vault.cash`
 `./hodl_vault.ts`
 
+### Fund the contract
+
+First, take note of the following line in `hold_vault.ts`
+
+```ts
+const instance: Instance = HodlVault.new(
+  bitbox.ECPair.toPublicKey(owner),
+  bitbox.ECPair.toPublicKey(oracle.keypair),
+  597000,
+  30000
+)
+```
+
+That is the line where you instantiate the contract. the 3rd arg is the blockheight and the 4th arg is the USD price in cents.
+
+Those values will matter later when you want to spend the funds which are locked in this contract. You'll need to pass in a blockheight and price which are greater than what you pass in when you instantiate the contract.
+
 Comment out the following lines in `hold_vault.ts`
 
 ```ts
@@ -71,3 +88,26 @@ contract balance: 0
 ```
 
 Notice it displays the contracts P2SH (pay-to-script-hash) address. Send some funds to that address where they will be locked.
+
+### Spend the contract
+
+Now you're ready to spend the funds which are locked in the contract. To do that first uncomment out the lines which we commented out in the previous step:
+
+```ts
+// Produce new oracle message and signature
+const oracleMessage: Buffer = oracle.createMessage(597000, 30000)
+const oracleSignature: Buffer = oracle.signMessage(oracleMessage)
+
+// Spend from the vault
+const tx: TxnDetailsResult = await instance.functions
+  .spend(new Sig(owner, 0x01), oracleSignature, oracleMessage)
+  .send(instance.address, 1000)
+```
+
+Next update the following line to have a valid block height and BCH price
+
+```ts
+const oracleMessage: Buffer = oracle.createMessage(597000, 30000)
+```
+
+Keep in mind that the blockheight
