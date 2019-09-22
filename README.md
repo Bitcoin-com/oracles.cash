@@ -37,3 +37,37 @@ curl -X GET "http://localhost:3000/v1/price/details" -H "accept: application/jso
 ```
 
 ## Smart contract
+
+This contract forces HODLing until a certain price target has been reached
+A minimum block is provided to ensure that oracle price entries from before this block are disregarded
+i.e. when the BCH price was \$1000 in the past, an oracle entry with the old block number and price can not be used.
+Instead, a message with a block number and price from after the minBlock needs to be passed.
+This contract serves as a simple example for checkDataSig-based contracts.
+
+Credit to [Rosco Khalis](https://twitter.com/RoscoKalis), creator of CashScript, for creating the HodlVault Cash Contract.
+
+`./src/routes/v1/contracts/hodl_vault.cash`
+`./hodl_vault.ts`
+
+Comment out the following lines in `hold_vault.ts`
+
+```ts
+// Produce new oracle message and signature
+const oracleMessage: Buffer = oracle.createMessage(597000, 30000)
+const oracleSignature: Buffer = oracle.signMessage(oracleMessage)
+
+// Spend from the vault
+const tx: TxnDetailsResult = await instance.functions
+  .spend(new Sig(owner, 0x01), oracleSignature, oracleMessage)
+  .send(instance.address, 1000)
+```
+
+Then run the script using [ts-node](https://www.npmjs.com/package/ts-node)
+
+```
+./node_modules/.bin/ts-node ./hodl_vault.ts
+contract address: bchtest:pr6a369a5s3k5fqfnkhnnjw2a0rq6rkrkgvaqy7g7l
+contract balance: 0
+```
+
+Notice it displays the contracts P2SH (pay-to-script-hash) address. Send some funds to that address where they will be locked.
