@@ -1,4 +1,4 @@
-## oracles.cash
+# oracles.cash
 
 ![crystal ball](crystal-ball.jpg)
 
