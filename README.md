@@ -6,7 +6,15 @@
 
 Oracles allow outside information to be provided which can trigger execution in smart-contracts. Oracles.cash is a template for easily spinning up a backend to publish oracle data as well as an example of a Bitcoin Cash smart-contract which consumes data from the oracle service.
 
-This was created for the [2019 WyoHackathon](https://wyohackathon.io)
+Oracles can be used for:
+
+- Prediction markets
+- trustless gambling
+- Covenants
+
+Oracles.cash was created by [@cgcardona](https://twitter.com/cgcardona) for the [2019 WyoHackathon](https://wyohackathon.io)
+
+More info at [https://oracle.bitcoin.com/](https://oracle.bitcoin.com/)
 
 ## Price Data
 
