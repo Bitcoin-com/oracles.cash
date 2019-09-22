@@ -1,16 +1,10 @@
 "use strict"
 
-const wtfnode = require("wtfnode") // Debugging the event loop
-// const util = require("util")
-
 import * as express from "express"
-import { logReqInfo } from "./middleware/req-logging"
 // Middleware
 import { routeRateLimit } from "./middleware/route-ratelimit"
 
 const path = require("path")
-const logger = require("morgan")
-const wlogger = require("./util/winston-logging")
 const cookieParser = require("cookie-parser")
 const bodyParser = require("body-parser")
 // const basicAuth = require("express-basic-auth")
@@ -20,7 +14,6 @@ const http = require("http")
 const cors = require("cors")
 const AuthMW = require("./middleware/auth")
 
-const swStats = require("swagger-stats")
 let apiSpec
 if (process.env.NETWORK === "mainnet") {
   apiSpec = require("./public/oracles-cash-mainnet-rest-v1.json")
@@ -43,8 +36,6 @@ const app: express.Application = express()
 
 app.locals.env = process.env
 
-app.use(swStats.getMiddleware({ swaggerSpec: apiSpec }))
-
 app.use(helmet())
 
 app.use(cors())
@@ -56,20 +47,12 @@ app.set("view engine", "jade")
 
 app.use("/public", express.static(`${__dirname}/public`))
 
-// Log each request to the console with IP addresses.
-app.use(
-  logger(
-    `:remote-addr :remote-user :method :url :status :response-time ms - :res[content-length] :user-agent`
-  )
-)
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, "public")))
 
 // Local logging middleware for tracking incoming connection information.
-app.use(`/`, logReqInfo)
 
 //
 // let username = process.env.USERNAME;
@@ -164,20 +147,6 @@ server.on("listening", onListening)
 // Set the time before a timeout error is generated. This impacts testing and
 // the handling of timeout errors. Is 10 seconds too agressive?
 server.setTimeout(30 * 1000)
-
-// Dump details about the event loop to debug a possible memory leak
-wtfnode.setLogger("info", function(data) {
-  wlogger.verbose(`wtfnode info: ${data}`)
-})
-wtfnode.setLogger("warn", function(data) {
-  wlogger.verbose(`wtfnode warn: ${data}`)
-})
-wtfnode.setLogger("error", function(data) {
-  wlogger.verbose(`wtfnode error: ${data}`)
-})
-setInterval(function() {
-  wtfnode.dump()
-}, 60000 * 5)
 
 /**
  * Normalize a port into a number, string, or false.

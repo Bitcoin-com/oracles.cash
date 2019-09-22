@@ -4,7 +4,6 @@
 
 const axios = require("axios")
 const logger = require("./logging.js")
-const wlogger = require("../../util/winston-logging")
 
 const util = require("util")
 util.inspect.defaultOptions = { depth: 1 }
@@ -136,7 +135,6 @@ function decodeError(err) {
 
     return { msg: false, status: 500 }
   } catch (err) {
-    wlogger.error(`unhandled error in route-utils.js/decodeError(): `, err)
     return { msg: false, status: 500 }
   }
 }

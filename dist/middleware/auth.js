@@ -12,7 +12,6 @@
 var passport = require("passport");
 var BasicStrategy = require("passport-http").BasicStrategy;
 var AnonymousStrategy = require("passport-anonymous");
-var wlogger = require("../util/winston-logging");
 // Used for debugging and iterrogating JS objects.
 var util = require("util");
 util.inspect.defaultOptions = { depth: 1 };

@@ -14,7 +14,6 @@
 const passport = require("passport")
 const BasicStrategy = require("passport-http").BasicStrategy
 const AnonymousStrategy = require("passport-anonymous")
-const wlogger = require("../util/winston-logging")
 
 // Used for debugging and iterrogating JS objects.
 const util = require("util")

@@ -1,14 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var wtfnode = require("wtfnode"); // Debugging the event loop
-// const util = require("util")
 var express = require("express");
-var req_logging_1 = require("./middleware/req-logging");
 // Middleware
 var route_ratelimit_1 = require("./middleware/route-ratelimit");
 var path = require("path");
-var logger = require("morgan");
-var wlogger = require("./util/winston-logging");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 // const basicAuth = require("express-basic-auth")
@@ -17,7 +12,6 @@ var debug = require("debug")("rest-cloud:server");
 var http = require("http");
 var cors = require("cors");
 var AuthMW = require("./middleware/auth");
-var swStats = require("swagger-stats");
 var apiSpec;
 if (process.env.NETWORK === "mainnet") {
     apiSpec = require("./public/oracles-cash-mainnet-rest-v1.json");
@@ -31,7 +25,6 @@ var priceV1 = require("./routes/v1/price");
 require("dotenv").config();
 var app = express();
 app.locals.env = process.env;
-app.use(swStats.getMiddleware({ swaggerSpec: apiSpec }));
 app.use(helmet());
 app.use(cors());
 app.enable("trust proxy");
@@ -39,14 +32,10 @@ app.enable("trust proxy");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 app.use("/public", express.static(__dirname + "/public"));
-// Log each request to the console with IP addresses.
-app.use(logger(":remote-addr :remote-user :method :url :status :response-time ms - :res[content-length] :user-agent"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-// Local logging middleware for tracking incoming connection information.
-app.use("/", req_logging_1.logReqInfo);
 // Make io accessible to our router
 app.use(function (req, res, next) {
     req.io = io;
@@ -101,19 +90,6 @@ server.on("listening", onListening);
 // Set the time before a timeout error is generated. This impacts testing and
 // the handling of timeout errors. Is 10 seconds too agressive?
 server.setTimeout(30 * 1000);
-// Dump details about the event loop to debug a possible memory leak
-wtfnode.setLogger("info", function (data) {
-    wlogger.verbose("wtfnode info: " + data);
-});
-wtfnode.setLogger("warn", function (data) {
-    wlogger.verbose("wtfnode warn: " + data);
-});
-wtfnode.setLogger("error", function (data) {
-    wlogger.verbose("wtfnode error: " + data);
-});
-setInterval(function () {
-    wtfnode.dump();
-}, 60000 * 5);
 /**
  * Normalize a port into a number, string, or false.
  */

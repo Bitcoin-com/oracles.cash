@@ -6,7 +6,6 @@ import * as express from "express"
 import * as util from "util"
 import { PriceOracle } from "./PriceOracle"
 import routeUtils = require("./route-utils")
-import wlogger = require("../../util/winston-logging")
 
 // consts
 const router: express.Router = express.Router()
@@ -66,10 +65,6 @@ async function details(
       res.status(status)
       return res.json({ error: msg })
     }
-
-    // Write out error to error log.
-    //logger.error(`Error in price.ts/details: `, err)
-    wlogger.error(`Error in price.ts/details().`, err)
 
     res.status(500)
     return res.json({ error: util.inspect(err) })
